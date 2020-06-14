@@ -16,5 +16,8 @@
       <FileRef
          location = "group:OpaqueReturnType.playground">
       </FileRef>
+      <FileRef
+         location = "group:FP_fizzbuzz.playground">
+      </FileRef>
    </Group>
 </Workspace>

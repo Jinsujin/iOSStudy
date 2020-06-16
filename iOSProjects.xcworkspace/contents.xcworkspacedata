@@ -19,5 +19,8 @@
       <FileRef
          location = "group:FP_fizzbuzz.playground">
       </FileRef>
+      <FileRef
+         location = "group:property.playground">
+      </FileRef>
    </Group>
 </Workspace>

@@ -3,6 +3,13 @@
    version = "1.0">
    <Group
       location = "container:"
+      name = "Apps">
+      <FileRef
+         location = "group:DemoProject/DemoProject.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "PlayGrounds">
       <FileRef
          location = "group:propertyWrapper.playground">

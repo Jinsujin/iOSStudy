@@ -10,17 +10,46 @@ import SwiftUI
 
 struct MainScene: View {
 
+    let appleIconStack = HStack {
+        Text("Image")
+//            .font(.custom("Copperplate", size: 50))
+            .font(.largeTitle)
+        Image("apple_rainbow")
+        .resizable()
+//            .aspectRatio(contentMode: .fit)
+    }
+    
     var body: some View {
         VStack {
+            // 수정자 순서에 따라 뷰에 적용이 된다
             Text("Hello, World!")
                 .font(.largeTitle)
                 .foregroundColor(.red)
+                .padding()
+                .border(Color.black)
+                
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
             }
+            MyHStackView()
+            appleIconStack
         }
         
 
+    }
+}
+
+/**
+  하위뷰로 나누기 - 컴포넌트 생성
+ */
+struct MyHStackView: View {
+    var body: some View {
+        HStack {
+            Text("Text 3")
+                .foregroundColor(.black)
+            Text("Text 4")
+                .foregroundColor(.orange)
+        }
     }
 }
 

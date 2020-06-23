@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MainScene: View {
 
+    @State var showDetails = false
+    
     let appleIconStack = HStack {
         Text("Image")
 //            .font(.custom("Copperplate", size: 50))
@@ -28,14 +30,20 @@ struct MainScene: View {
                 .padding()
                 .border(Color.black)
                 
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+            Button(action: {
+                self.showDetails.toggle()
+            }) {
+                Text("Button")
+            }
+            if showDetails {
+                Text("Show!")
+                    .font(.largeTitle)
+                    .lineLimit(nil)
+                    .foregroundColor(.black)
             }
             MyHStackView()
             appleIconStack
         }
-        
-
     }
 }
 

@@ -17,6 +17,8 @@
 		6F776FFB24A47886007ED401 /* CommonLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F776FFA24A47886007ED401 /* CommonLoad.swift */; };
 		6F776FFD24A480A7007ED401 /* OperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F776FFC24A480A7007ED401 /* OperatorViewController.swift */; };
 		6F776FFF24A49B25007ED401 /* LogInValidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F776FFE24A49B25007ED401 /* LogInValidateViewController.swift */; };
+		6F77700524A5C1B4007ED401 /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77700424A5C1B4007ED401 /* CalcViewController.swift */; };
+		6F77700924A5E98C007ED401 /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77700824A5E98C007ED401 /* CalcViewModel.swift */; };
 		F1A11A4BD0CFCA04EBACEFD4 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFCF2EDB8F1711EB54B26A5 /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		6F776FFA24A47886007ED401 /* CommonLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLoad.swift; sourceTree = "<group>"; };
 		6F776FFC24A480A7007ED401 /* OperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorViewController.swift; sourceTree = "<group>"; };
 		6F776FFE24A49B25007ED401 /* LogInValidateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInValidateViewController.swift; sourceTree = "<group>"; };
+		6F77700424A5C1B4007ED401 /* CalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewController.swift; sourceTree = "<group>"; };
+		6F77700824A5E98C007ED401 /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
 		7F32027307D3DAC95105DA03 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D826766E1C9DAF5B71963165 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,19 +84,37 @@
 		6F776FE324A46F71007ED401 /* RxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6F77700624A5C70A007ED401 /* pages */,
 				6F776FE424A46F71007ED401 /* AppDelegate.swift */,
-				6F776FFC24A480A7007ED401 /* OperatorViewController.swift */,
 				6F776FE624A46F71007ED401 /* SceneDelegate.swift */,
 				6F776FE824A46F71007ED401 /* ViewController.swift */,
 				6F776FEA24A46F71007ED401 /* Main.storyboard */,
 				6F776FED24A46F75007ED401 /* Assets.xcassets */,
 				6F776FEF24A46F75007ED401 /* LaunchScreen.storyboard */,
 				6F776FF224A46F75007ED401 /* Info.plist */,
-				6F776FF824A47483007ED401 /* ImageLoadViewController.swift */,
 				6F776FFA24A47886007ED401 /* CommonLoad.swift */,
-				6F776FFE24A49B25007ED401 /* LogInValidateViewController.swift */,
 			);
 			path = RxSwiftDemo;
+			sourceTree = "<group>";
+		};
+		6F77700624A5C70A007ED401 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				6F77700724A5E979007ED401 /* Calc */,
+				6F776FFC24A480A7007ED401 /* OperatorViewController.swift */,
+				6F776FF824A47483007ED401 /* ImageLoadViewController.swift */,
+				6F776FFE24A49B25007ED401 /* LogInValidateViewController.swift */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		6F77700724A5E979007ED401 /* Calc */ = {
+			isa = PBXGroup;
+			children = (
+				6F77700824A5E98C007ED401 /* CalcViewModel.swift */,
+				6F77700424A5C1B4007ED401 /* CalcViewController.swift */,
+			);
+			path = Calc;
 			sourceTree = "<group>";
 		};
 		704099EF39C03EFE1CD5084E /* Frameworks */ = {
@@ -223,7 +245,9 @@
 				6F776FFB24A47886007ED401 /* CommonLoad.swift in Sources */,
 				6F776FFD24A480A7007ED401 /* OperatorViewController.swift in Sources */,
 				6F776FE524A46F71007ED401 /* AppDelegate.swift in Sources */,
+				6F77700524A5C1B4007ED401 /* CalcViewController.swift in Sources */,
 				6F776FF924A47483007ED401 /* ImageLoadViewController.swift in Sources */,
+				6F77700924A5E98C007ED401 /* CalcViewModel.swift in Sources */,
 				6F776FE724A46F71007ED401 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

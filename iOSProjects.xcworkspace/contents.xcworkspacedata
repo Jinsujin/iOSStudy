@@ -5,6 +5,9 @@
       location = "container:"
       name = "Apps">
       <FileRef
+         location = "group:Apps/MVVMDemo/MVVMDemo.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Apps/SwiftUIDemo/SwiftUIDemo.xcodeproj">
       </FileRef>
       <FileRef

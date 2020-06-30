@@ -5,44 +5,38 @@
       location = "container:"
       name = "Apps">
       <FileRef
-         location = "group:RxSwiftDemo/RxSwiftDemo.xcodeproj">
+         location = "group:Apps/SwiftUIDemo/SwiftUIDemo.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:ListDemo/ListDemo.xcodeproj">
+         location = "group:Apps/ListDemo/ListDemo.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:AlignmentTool/AlignmentTool.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:ObservableDemo/ObservableDemo.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:SwiftUIDemo/SwiftUIDemo.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:DemoProject/DemoProject.xcodeproj">
+         location = "group:Apps/AlignmentTool/AlignmentTool.xcodeproj">
       </FileRef>
    </Group>
    <Group
       location = "container:"
       name = "PlayGrounds">
       <FileRef
-         location = "group:propertyWrapper.playground">
+         location = "group:PlayGrounds/OpaqueReturnType.playground">
       </FileRef>
       <FileRef
-         location = "group:MyPlayground.playground">
+         location = "group:PlayGrounds/FP_fizzbuzz.playground">
       </FileRef>
       <FileRef
-         location = "group:Swift5Basic01.playground">
+         location = "group:PlayGrounds/SkillTest.playground">
       </FileRef>
       <FileRef
-         location = "group:OpaqueReturnType.playground">
+         location = "group:PlayGrounds/propertyWrapper.playground">
       </FileRef>
       <FileRef
-         location = "group:FP_fizzbuzz.playground">
+         location = "group:PlayGrounds/Swift5Basic01.playground">
       </FileRef>
       <FileRef
-         location = "group:property.playground">
+         location = "group:PlayGrounds/property.playground">
+      </FileRef>
+      <FileRef
+         location = "group:PlayGrounds/MyPlayground.playground">
       </FileRef>
    </Group>
 </Workspace>

@@ -152,4 +152,53 @@ class LogInValidateViewController: UIViewController {
     private func checkPasswordValid(_ password: String) -> Bool {
         return password.count > 5
     }
+    
+    
+    func fetchData(){
+        
+        downloadJson("https://naver.com")
+            .subscribe{ event in
+                switch event {
+                case let .next(json):
+                    DispatchQueue.main.async {
+                        self.view.backgroundColor = .green
+//                        self.editView.text = json
+//                        self.setVisibleWithAnimation(self.activityIndicator, false)
+                    }
+                case .completed:
+                    break
+                case .error:
+                    break
+                }
+        }
+    }
+    
+    func downloadJson(_ url: String) -> Observable<String?> {
+        return Observable.create() { emitter in
+            let url = URL(string: url)!
+            //URLSession 은 메인쓰레드가 아닌곳에서 돌아간다
+            //
+            let task = URLSession.shared.dataTask(with: url) { (data, res, err) in
+                guard err == nil else {
+                    emitter.onError(err!)
+                    return
+                }
+                
+                if let data = data,
+                    let json = String(data: data, encoding: .utf8){
+                    // onNext로 값 전달. 여러개도 가능
+                    emitter.onNext(json)
+                }
+                
+                // Observable 은 complete 가 불렸을때 끝남
+                emitter.onCompleted()
+            }
+            task.resume()
+            
+            return Disposables.create() {
+                // dispose가 불렸을때 여기를 실행한다 -> 작업중지시킴
+                task.cancel()
+            }
+        }
+    }
 }

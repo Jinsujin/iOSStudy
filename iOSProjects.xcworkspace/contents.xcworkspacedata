@@ -8,9 +8,6 @@
          location = "group:Apps/MVVMDemo/MVVMDemo.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Apps/ListDemo/ListDemo.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:Apps/AlignmentTool/AlignmentTool.xcodeproj">
       </FileRef>
    </Group>
@@ -36,7 +33,10 @@
          location = "group:PlayGrounds/property.playground">
       </FileRef>
       <FileRef
-         location = "group:PlayGrounds/MyPlayground.playground">
+         location = "group:/Users/jsj/dev/iOS/swift/GCD.playground">
+      </FileRef>
+      <FileRef
+         location = "group:DataStructures.playground">
       </FileRef>
    </Group>
 </Workspace>

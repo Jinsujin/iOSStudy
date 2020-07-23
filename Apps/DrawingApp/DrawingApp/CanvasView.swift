@@ -60,7 +60,11 @@ class CanvasView: UIView {
     
     // 2. 터치한 상태로 움직였을때
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first?.location(in: nil) else {
+//        guard let touch = touches.first?.location(in: nil) else {
+//            return
+//        }
+        
+        guard let touch = touches.first?.location(in: self) else {
             return
         }
         

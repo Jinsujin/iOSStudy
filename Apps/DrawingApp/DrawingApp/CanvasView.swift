@@ -18,7 +18,6 @@ struct TouchedPointAndColor {
         self.color  = color
         self.points = points
     }
-    
 }
 
 

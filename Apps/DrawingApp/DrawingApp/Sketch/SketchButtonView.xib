@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SketchButtonView" customModule="DrawingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="656" height="162"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ekp-m6-oBd">
+                    <rect key="frame" x="49" y="90" width="568" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nu9-qf-AwV">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="Pen"/>
+                            <connections>
+                                <action selector="tapPenButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bwy-X4-mMx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS9-Qg-Quf">
+                            <rect key="frame" x="43" y="0.0" width="44" height="30"/>
+                            <state key="normal" title="Eraser"/>
+                            <connections>
+                                <action selector="tapEraserButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="RIn-UU-cgR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tl-nb-w84">
+                            <rect key="frame" x="100" y="0.0" width="37" height="30"/>
+                            <state key="normal" title="Undo"/>
+                            <connections>
+                                <action selector="tapUndoButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="PuL-qm-qfQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGw-0q-eaj">
+                            <rect key="frame" x="150" y="0.0" width="36" height="30"/>
+                            <state key="normal" title="Redo"/>
+                            <connections>
+                                <action selector="tapRedoButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="0ZD-sA-BLx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ET9-Ba-525">
+                            <rect key="frame" x="199" y="0.0" width="36" height="30"/>
+                            <state key="normal" title="Clear"/>
+                            <connections>
+                                <action selector="tapClearButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="4ht-AL-nHe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aey-QO-Du7">
+                            <rect key="frame" x="248" y="0.0" width="48" height="30"/>
+                            <state key="normal" title="Palette"/>
+                            <connections>
+                                <action selector="tapPaletteButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="v0V-oo-pzY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkT-pZ-qVy">
+                            <rect key="frame" x="309" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="Fill"/>
+                            <connections>
+                                <action selector="tapFillButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="YiW-e8-vXI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUB-0N-Zmn">
+                            <rect key="frame" x="352" y="0.0" width="45" height="30"/>
+                            <state key="normal" title="Stamp"/>
+                            <connections>
+                                <action selector="tapStampButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="tR6-sY-Ss9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWs-n6-c8S">
+                            <rect key="frame" x="410" y="0.0" width="43" height="30"/>
+                            <state key="normal" title="Figure"/>
+                            <connections>
+                                <action selector="tapFigureButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="80W-Rd-t7j"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jy-f9-WRZ">
+                            <rect key="frame" x="466" y="0.0" width="35" height="30"/>
+                            <state key="normal" title="Filter"/>
+                            <connections>
+                                <action selector="tapFilterButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="sfD-2l-4j0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hb-hl-z5B">
+                            <rect key="frame" x="514" y="0.0" width="54" height="30"/>
+                            <state key="normal" title="Camera"/>
+                            <connections>
+                                <action selector="tapCameraButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="gSO-Rs-mGj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="228.98550724637684" y="-232.36607142857142"/>
+        </view>
+    </objects>
+</document>

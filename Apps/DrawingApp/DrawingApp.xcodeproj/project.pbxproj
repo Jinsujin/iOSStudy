@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458E9C14413A8BCC0B67FA59 /* Pods_DrawingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7C2891A7A08C8481DB78C8 /* Pods_DrawingApp.framework */; };
+		6F655D2924D0FAD600402868 /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D2824D0FAD600402868 /* SketchViewController.swift */; };
+		6F655D2B24D0FDF600402868 /* SketchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D2A24D0FDF600402868 /* SketchButtonView.swift */; };
+		6F655D2F24D102BA00402868 /* SketchButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F655D2E24D102BA00402868 /* SketchButtonView.xib */; };
+		6F655D3224D1085900402868 /* PhotoAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D3124D1085900402868 /* PhotoAuthorization.swift */; };
+		6F655D3424D1087600402868 /* PhotoRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655D3324D1087600402868 /* PhotoRequestManager.swift */; };
 		6F6C692D24C5DD87002788C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C692C24C5DD87002788C0 /* AppDelegate.swift */; };
 		6F6C692F24C5DD87002788C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C692E24C5DD87002788C0 /* SceneDelegate.swift */; };
 		6F6C693124C5DD87002788C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C693024C5DD87002788C0 /* ViewController.swift */; };
@@ -17,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F5B06D267E983D671F2E591 /* Pods-DrawingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingApp.release.xcconfig"; path = "Target Support Files/Pods-DrawingApp/Pods-DrawingApp.release.xcconfig"; sourceTree = "<group>"; };
+		3C7C2891A7A08C8481DB78C8 /* Pods_DrawingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrawingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F655D2824D0FAD600402868 /* SketchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
+		6F655D2A24D0FDF600402868 /* SketchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchButtonView.swift; sourceTree = "<group>"; };
+		6F655D2E24D102BA00402868 /* SketchButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SketchButtonView.xib; sourceTree = "<group>"; };
+		6F655D3124D1085900402868 /* PhotoAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAuthorization.swift; sourceTree = "<group>"; };
+		6F655D3324D1087600402868 /* PhotoRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestManager.swift; sourceTree = "<group>"; };
 		6F6C692924C5DD87002788C0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6C692C24C5DD87002788C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F6C692E24C5DD87002788C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +39,7 @@
 		6F6C693824C5DD91002788C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F6C693A24C5DD92002788C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F6C694024C5E34A002788C0 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		BAB95AC48E2ED945F5AF59CB /* Pods-DrawingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawingApp.debug.xcconfig"; path = "Target Support Files/Pods-DrawingApp/Pods-DrawingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458E9C14413A8BCC0B67FA59 /* Pods_DrawingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F655D3024D1084F00402868 /* Sketch */ = {
+			isa = PBXGroup;
+			children = (
+				6F655D3124D1085900402868 /* PhotoAuthorization.swift */,
+				6F655D2824D0FAD600402868 /* SketchViewController.swift */,
+				6F655D2A24D0FDF600402868 /* SketchButtonView.swift */,
+				6F655D2E24D102BA00402868 /* SketchButtonView.xib */,
+				6F655D3324D1087600402868 /* PhotoRequestManager.swift */,
+			);
+			path = Sketch;
+			sourceTree = "<group>";
+		};
 		6F6C692024C5DD87002788C0 = {
 			isa = PBXGroup;
 			children = (
 				6F6C692B24C5DD87002788C0 /* DrawingApp */,
 				6F6C692A24C5DD87002788C0 /* Products */,
+				E8E3E63839B53DB05BA31664 /* Pods */,
+				A7B8A230D3CF37A590E225BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +87,7 @@
 		6F6C692B24C5DD87002788C0 /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
+				6F655D3024D1084F00402868 /* Sketch */,
 				6F6C694024C5E34A002788C0 /* CanvasView.swift */,
 				6F6C692C24C5DD87002788C0 /* AppDelegate.swift */,
 				6F6C692E24C5DD87002788C0 /* SceneDelegate.swift */,
@@ -70,6 +100,23 @@
 			path = DrawingApp;
 			sourceTree = "<group>";
 		};
+		A7B8A230D3CF37A590E225BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C7C2891A7A08C8481DB78C8 /* Pods_DrawingApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8E3E63839B53DB05BA31664 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAB95AC48E2ED945F5AF59CB /* Pods-DrawingApp.debug.xcconfig */,
+				2F5B06D267E983D671F2E591 /* Pods-DrawingApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F6C693D24C5DD92002788C0 /* Build configuration list for PBXNativeTarget "DrawingApp" */;
 			buildPhases = (
+				0690854E2A83F0730347F690 /* [CP] Check Pods Manifest.lock */,
 				6F6C692524C5DD87002788C0 /* Sources */,
 				6F6C692624C5DD87002788C0 /* Frameworks */,
 				6F6C692724C5DD87002788C0 /* Resources */,
+				4AFB10475DDE110A42725F0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,17 +179,64 @@
 			files = (
 				6F6C693924C5DD91002788C0 /* LaunchScreen.storyboard in Resources */,
 				6F6C693624C5DD91002788C0 /* Assets.xcassets in Resources */,
+				6F655D2F24D102BA00402868 /* SketchButtonView.xib in Resources */,
 				6F6C693424C5DD87002788C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0690854E2A83F0730347F690 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DrawingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AFB10475DDE110A42725F0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DrawingApp/Pods-DrawingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DrawingApp/Pods-DrawingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DrawingApp/Pods-DrawingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6F6C692524C5DD87002788C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F655D2B24D0FDF600402868 /* SketchButtonView.swift in Sources */,
+				6F655D3224D1085900402868 /* PhotoAuthorization.swift in Sources */,
+				6F655D3424D1087600402868 /* PhotoRequestManager.swift in Sources */,
+				6F655D2924D0FAD600402868 /* SketchViewController.swift in Sources */,
 				6F6C693124C5DD87002788C0 /* ViewController.swift in Sources */,
 				6F6C692D24C5DD87002788C0 /* AppDelegate.swift in Sources */,
 				6F6C694124C5E34A002788C0 /* CanvasView.swift in Sources */,
@@ -286,6 +382,7 @@
 		};
 		6F6C693E24C5DD92002788C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAB95AC48E2ED945F5AF59CB /* Pods-DrawingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +401,7 @@
 		};
 		6F6C693F24C5DD92002788C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F5B06D267E983D671F2E591 /* Pods-DrawingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 import Cocoa
 
 /**
@@ -56,3 +58,5 @@ struct Contact {
 }
 
 print(Contact(name: "Jin", city: "Seoul", country: "Korea"))
+
+//: [Next](@next)

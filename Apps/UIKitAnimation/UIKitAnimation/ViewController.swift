@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
         slider = HorizontalSlider(in: view){ [unowned self] item in
             self.tableView.addItem(item)
-//            self.transitionCloseMenu()
+            self.transitionCloseMenu()
         }
         titleLable.superview!.addSubview(slider)
         
@@ -74,6 +74,17 @@ private extension ViewController {
         
         menuHeightConstraint.constant = menuIsOpen ? 200 : 80
         menuButtonTrailingConstraint.constant = menuIsOpen ? 16: 8
+                
+        UIView.animate(
+            withDuration: 1, delay: 0,
+            usingSpringWithDamping: 0.4,
+            initialSpringVelocity: 10,
+            options: .allowUserInteraction) {
+                self.menuButton.transform = .init(rotationAngle: self.menuIsOpen ? .pi / 4 : 0)
+                self.view.layoutIfNeeded()
+        }
+        
+        
         UIView.animate(
             withDuration: 1/3, delay: 0,
             options: .curveEaseIn,
@@ -87,39 +98,60 @@ private extension ViewController {
     
     // cell 클릭시, 아이템 애니메이션
     func showItem(_ item: Item) {
-      let imageView = UIImageView(item: item)
-      imageView.backgroundColor = .init(white: 0, alpha: 0.5)
-      imageView.layer.cornerRadius = 5
-      imageView.layer.masksToBounds = true
-      imageView.translatesAutoresizingMaskIntoConstraints = false
-      view.addSubview(imageView)
+        let imageView = UIImageView(item: item)
+        imageView.backgroundColor = .init(white: 0, alpha: 0.5)
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+
+        let containerView = UIView(frame: imageView.frame)
+        view.addSubview(containerView)
+        containerView.addSubview(imageView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        let bottomConstraint = imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: imageView.frame.height)
-        let widthConstraint = imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: -50)
+        
+        let bottomConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: containerView.frame.height)
+        let widthConstraint = containerView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3, constant: -50)
         
         NSLayoutConstraint.activate([
             bottomConstraint,
             widthConstraint,
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
-            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            containerView.heightAnchor.constraint(equalTo: containerView.widthAnchor),
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            imageView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         ])
         self.view.layoutIfNeeded()
-        UIView.animate(withDuration: 0.8){
+        
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: []) {
             bottomConstraint.constant = imageView.frame.height * -2
             widthConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
         
-        UIView.animateKeyframes(withDuration: 2/3, delay: 2) {
-            bottomConstraint.constant = imageView.frame.height
-            widthConstraint.constant = -50
-            self.view.layoutIfNeeded()
-        } completion: { _ in
-            // 화면에서 이미지뷰가 사라질때, 상위뷰에서 제거
-            imageView.removeFromSuperview()
+        delay(seconds: 1){
+            UIView.transition(with: containerView, duration: 1,
+                              options: .transitionFlipFromBottom,
+                              animations: imageView.removeFromSuperview,
+                              completion: {_ in containerView.removeFromSuperview() })
         }
-
     }
 
+    func transitionCloseMenu() {
+      delay(seconds: 0.35, execute: toggleMenu)
+        
+        let titleBar = slider.superview!
+        UIView.transition(with: titleBar, duration: 0.5,
+                          options: .transitionFlipFromBottom,
+                          animations: { self.slider.isHidden = true},
+                          completion: {_ in self.slider.isHidden = false})
+    }
 }
 
+private func delay(seconds: TimeInterval, execute: @escaping () -> Void) {
+  DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: execute)
+}

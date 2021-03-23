@@ -29,7 +29,7 @@
                                         <rect key="frame" x="386" y="43" width="20" height="22"/>
                                         <state key="normal" image="plus.circle" catalog="system"/>
                                         <connections>
-                                            <action selector="toggleMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BnI-0U-OJG"/>
+                                            <action selector="toggleMenu" destination="BYZ-38-t0r" eventType="touchUpInside" id="P60-LM-A2Y"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstItem="pjV-UA-2PJ" firstAttribute="centerY" secondItem="Wwb-7o-UDf" secondAttribute="centerY" id="Ft0-DS-Fbc"/>
                                     <constraint firstItem="Wwb-7o-UDf" firstAttribute="centerX" secondItem="cQJ-BN-z4y" secondAttribute="centerX" id="Rfk-OT-l7F"/>
-                                    <constraint firstItem="Wwb-7o-UDf" firstAttribute="centerY" secondItem="cQJ-BN-z4y" secondAttribute="centerY" priority="750" id="dh9-hW-wts"/>
+                                    <constraint firstItem="Wwb-7o-UDf" firstAttribute="centerY" secondItem="cQJ-BN-z4y" secondAttribute="centerY" priority="750" identifier="Title Center Y" id="dh9-hW-wts"/>
                                     <constraint firstAttribute="height" constant="80" id="mM4-LB-9Sq"/>
                                     <constraint firstAttribute="trailing" secondItem="pjV-UA-2PJ" secondAttribute="trailing" constant="8" id="mOy-0d-4Er"/>
                                 </constraints>
@@ -71,7 +71,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="menuButton" destination="pjV-UA-2PJ" id="ghh-vg-BI9"/>
+                        <outlet property="menuButton" destination="pjV-UA-2PJ" id="5JG-lt-SHa"/>
+                        <outlet property="menuButtonTrailingConstraint" destination="mOy-0d-4Er" id="ied-st-fRo"/>
                         <outlet property="menuHeightConstraint" destination="mM4-LB-9Sq" id="ReA-gq-HOM"/>
                         <outlet property="tableView" destination="41U-9l-Kq8" id="2b4-8N-S5p"/>
                         <outlet property="titleLable" destination="Wwb-7o-UDf" id="h21-eg-Rm5"/>

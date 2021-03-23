@@ -19,6 +19,7 @@ class TableView: UITableView {
     }
     
     func addItem(_ item: Item) {
+        print(item.rawValue)
         itemSet.insert(item)
         updateSnapshot()
         

@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet private var menuHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var menuButtonTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet private var titleCenterYClosedConstraint: NSLayoutConstraint!
+    @IBOutlet private var titleCenterYOpenConstraint: NSLayoutConstraint!
     
     @IBOutlet private var tableView: TableView! {
       didSet { tableView.handleSelection = showItem }
@@ -43,17 +45,31 @@ private extension ViewController {
         titleLable.text = menuIsOpen ? "Select IceCream": "Baskinrabbins"
         self.view.layoutIfNeeded() // titlelabel 애니메이션 막음
 
-        let constraints = titleLable.superview!.constraints
+        // 1-1. 제약조건을 아울렛으로 수정할때
+        // 편함 - 조건에 해당하는 제약조건 두개를 만들어서, 활성화-비활성화 하면 됨
+        titleCenterYClosedConstraint.isActive = !menuIsOpen
+        titleCenterYOpenConstraint.isActive = menuIsOpen
         
+        let constraints = titleLable.superview!.constraints
         constraints.first {
             $0.firstItem === titleLable
             && $0.firstAttribute == .centerX
         }?.constant = menuIsOpen ? -100 : 0
-        constraints.first {$0.identifier == "Title Center Y"}!.isActive = false
-        let constraint = NSLayoutConstraint(item: titleLable!, attribute: .centerY, relatedBy: .equal, toItem: titleLable.superview, attribute: .centerY, multiplier: menuIsOpen ? 2/3 : 1, constant: 0)
-        constraint.identifier = "Title Center Y"
-        constraint.priority = .defaultHigh
-        constraint.isActive = true
+
+        
+        
+        // 1-2. 제약조건을 코드로 수정할때
+        // 해당 제약조건을 부모뷰에서 찾아서 비활성화 한 다음, 새로운 제약조건을 코드로 만들어 추가
+//        let constraints = titleLable.superview!.constraints
+//        constraints.first {
+//            $0.firstItem === titleLable
+//            && $0.firstAttribute == .centerX
+//        }?.constant = menuIsOpen ? -100 : 0
+//        constraints.first {$0.identifier == "Title Center Y"}!.isActive = false
+//        let constraint = NSLayoutConstraint(item: titleLable!, attribute: .centerY, relatedBy: .equal, toItem: titleLable.superview, attribute: .centerY, multiplier: menuIsOpen ? 2/3 : 1, constant: 0)
+//        constraint.identifier = "Title Center Y"
+//        constraint.priority = .defaultHigh
+//        constraint.isActive = true
         
         
         menuHeightConstraint.constant = menuIsOpen ? 200 : 80

@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="88.392857142857139"/>
         </scene>
-        <!--Item-->
+        <!--Emoji View Controller-->
         <scene sceneID="VhX-4k-Gv7">
             <objects>
                 <viewController id="ft4-pu-eFL" customClass="EmojiViewController" customModule="CollectionView" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-Bz-vTr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="mkv-k9-BaU">
                                     <size key="itemSize" width="50" height="50"/>
@@ -148,26 +148,40 @@
                             <constraint firstItem="OqX-ID-DHA" firstAttribute="bottom" secondItem="NO2-Bz-vTr" secondAttribute="bottom" id="xIQ-e3-gNX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="JCH-0n-l1i"/>
-                    <navigationItem key="navigationItem" id="dvJ-pr-aAJ"/>
+                    <navigationItem key="navigationItem" id="dvJ-pr-aAJ">
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="GWa-dn-YY0">
+                                <connections>
+                                    <action selector="touchedAddEmoji:" destination="ft4-pu-eFL" id="5vn-k1-WUF"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="trash" catalog="system" id="J7M-do-nhX">
+                                <connections>
+                                    <action selector="touchedDeleteEmoji:" destination="ft4-pu-eFL" id="tRn-89-56V"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="GWa-dn-YY0" id="LW0-Ud-bnH"/>
                         <outlet property="collectionView" destination="NO2-Bz-vTr" id="SfO-og-QBM"/>
+                        <outlet property="deleteButton" destination="J7M-do-nhX" id="bNi-fL-gtn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GT9-hZ-20R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="940"/>
+            <point key="canvasLocation" x="992.75362318840587" y="939.50892857142856"/>
         </scene>
         <!--Emoji Detail Controller-->
         <scene sceneID="MVT-Hs-VS7">
             <objects>
                 <viewController id="Bkl-FG-W0Y" customClass="EmojiDetailController" customModule="CollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJD-Jl-MxG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8T-WG-vZc">
-                                <rect key="frame" x="184.5" y="397" width="45" height="48"/>
+                                <rect key="frame" x="184.5" y="424" width="45" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -187,7 +201,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2h-6t-UIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073.913043478261" y="939.50892857142856"/>
+            <point key="canvasLocation" x="1984.057971014493" y="939.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sNW-WL-Fyw">
+            <objects>
+                <viewController id="YPB-0a-H7g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bkF-qZ-Fcm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dW-Ys-HtK">
+                                <rect key="frame" x="195" y="437.5" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Obp-eU-XYi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0dW-Ys-HtK" firstAttribute="centerX" secondItem="bkF-qZ-Fcm" secondAttribute="centerX" id="TQ7-bS-cgr"/>
+                            <constraint firstItem="0dW-Ys-HtK" firstAttribute="centerY" secondItem="bkF-qZ-Fcm" secondAttribute="centerY" id="sag-n8-Ojs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjW-cF-1Fg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="927.45535714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="R3W-8X-m6B">
@@ -200,15 +241,36 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="j40-nK-CSw"/>
-                        <segue destination="ft4-pu-eFL" kind="relationship" relationship="viewControllers" id="Dx1-SS-cOZ"/>
+                        <segue destination="9ig-RN-d2e" kind="relationship" relationship="viewControllers" id="Dx1-SS-cOZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1o-2j-kBM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.608695652173921" y="88.392857142857139"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="O5u-uQ-GU1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ig-RN-d2e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="JCH-0n-l1i"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1A0-Cl-MCo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ft4-pu-eFL" kind="relationship" relationship="rootViewController" id="lT5-n9-FNj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAg-1i-ZGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="939.50892857142856"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

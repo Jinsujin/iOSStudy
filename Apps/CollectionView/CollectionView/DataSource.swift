@@ -32,3 +32,25 @@ class DataSource: NSObject, UICollectionViewDataSource {
         return emojiHeaderView
     }
 }
+
+extension DataSource {
+    func addEmoji(_ emoji: String, to category: Emoji.Category) {
+        guard var emojiData = self.emoji.data[category] else { return }
+        emojiData.append(emoji)
+        self.emoji.data.updateValue(emojiData, forKey: category)
+    }
+    
+    func deleteEmoji(at indexPath: IndexPath) {
+        let category = emoji.sections[indexPath.section]
+        guard var emojiData = emoji.data[category] else { return }
+        emojiData.remove(at: indexPath.item)
+        
+        emoji.data.updateValue(emojiData, forKey: category)
+    }
+    
+    func deleteEmoji(at indexPaths: [IndexPath]) {
+        for path in indexPaths {
+            deleteEmoji(at: path)
+        }
+    }
+}

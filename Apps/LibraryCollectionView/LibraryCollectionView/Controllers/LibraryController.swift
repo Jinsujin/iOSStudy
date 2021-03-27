@@ -50,6 +50,7 @@ final class LibraryController: UIViewController {
   
   private func setupView() {
     self.title = "Library"
+    collectionView.register(TitleSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
     
     collectionView.collectionViewLayout = configureCollectionViewLayout()
     configureDataSource()
@@ -76,6 +77,10 @@ extension LibraryController {
             section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             section.interGroupSpacing = 10
             
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+            section.boundarySupplementaryItems = [sectionHeader]
+            
             return section
         }
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
@@ -96,6 +101,19 @@ extension LibraryController {
             cell.thumbnailImageView.backgroundColor = tutorial.imageBackgroundColor
             return cell
         })
+        
+        // 순환참조 막기위해  weak self 사용
+        dataSource.supplementaryViewProvider = { [weak self] (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
+            
+            if let self = self, let titleSupplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier, for: indexPath) as? TitleSupplementaryView {
+                
+                let tutorialCollection = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+                titleSupplementaryView.textLabel.text = tutorialCollection.title
+                return titleSupplementaryView
+            } else {
+                return nil
+            }
+        }
     }
     
     

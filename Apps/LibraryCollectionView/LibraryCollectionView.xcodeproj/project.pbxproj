@@ -28,6 +28,7 @@
 		6F7D5510260F80A2008E1DDD /* Tutorials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F7D550F260F80A2008E1DDD /* Tutorials.plist */; };
 		6F7D5513260F80D0008E1DDD /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D5512260F80D0008E1DDD /* DataSource.swift */; };
 		6F7D5518260F9073008E1DDD /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7D5517260F9073008E1DDD /* TitleSupplementaryView.swift */; };
+		6F9957CA2610D7D6000271C7 /* BadgeSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9957C92610D7D6000271C7 /* BadgeSupplementaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		6F7D550F260F80A2008E1DDD /* Tutorials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tutorials.plist; sourceTree = "<group>"; };
 		6F7D5512260F80D0008E1DDD /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		6F7D5517260F9073008E1DDD /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
+		6F9957C92610D7D6000271C7 /* BadgeSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSupplementaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				6F7D5505260F75D8008E1DDD /* QueueCell.swift */,
 				6F7D5502260F75D8008E1DDD /* TutorialCell.swift */,
 				6F7D5517260F9073008E1DDD /* TitleSupplementaryView.swift */,
+				6F9957C92610D7D6000271C7 /* BadgeSupplementaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				6F7D54F9260F73EA008E1DDD /* Section.swift in Sources */,
 				6F7D5506260F75D8008E1DDD /* TutorialCell.swift in Sources */,
 				6F7D549E260F7051008E1DDD /* ViewController.swift in Sources */,
+				6F9957CA2610D7D6000271C7 /* BadgeSupplementaryView.swift in Sources */,
 				6F7D54EF260F73CB008E1DDD /* LibraryController.swift in Sources */,
 				6F7D5508260F75D8008E1DDD /* GradientView.swift in Sources */,
 				6F7D54F0260F73CB008E1DDD /* TutorialDetailController.swift in Sources */,

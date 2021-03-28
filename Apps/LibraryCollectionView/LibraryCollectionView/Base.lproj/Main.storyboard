@@ -343,8 +343,16 @@
                                     <action selector="deleteSelectedItems" destination="74t-2c-m25" id="ucj-vS-2Aq"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="play.fill" catalog="system" id="ksn-AE-ca8"/>
-                            <barButtonItem title="Item" image="arrow.clockwise.circle" catalog="system" id="Wpz-Ib-dpN"/>
+                            <barButtonItem title="Item" image="play.fill" catalog="system" id="ksn-AE-ca8">
+                                <connections>
+                                    <action selector="applyUpdates" destination="74t-2c-m25" id="Ulo-aT-oyT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrow.clockwise.circle" catalog="system" id="Wpz-Ib-dpN">
+                                <connections>
+                                    <action selector="triggerUpdates" destination="74t-2c-m25" id="mw7-YY-8Hw"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

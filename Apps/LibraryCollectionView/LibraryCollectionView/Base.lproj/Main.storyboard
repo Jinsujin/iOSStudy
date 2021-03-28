@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nmA-w5-6wc">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -61,6 +61,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="swG-BF-Ohi" secondAttribute="bottom" id="y7c-Ka-hk4"/>
                                                 <constraint firstItem="7On-Bw-GSP" firstAttribute="leading" secondItem="7t6-mJ-qdO" secondAttribute="leading" id="zRQ-UB-Tf4"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="230" height="192"/>
                                         <connections>
@@ -111,7 +117,7 @@
         <!--Tutorial Detail View Controller-->
         <scene sceneID="vN6-NP-lnE">
             <objects>
-                <viewController id="n2K-vi-j5p" customClass="TutorialDetailViewController" customModule="LibraryCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialDetailViewController" id="n2K-vi-j5p" customClass="TutorialDetailViewController" customModule="LibraryCollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzL-di-VMp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,6 +146,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVr-Ut-bqs">
                                         <rect key="frame" x="0.0" y="70" width="97" height="30"/>
                                         <state key="normal" title="Add To Queue"/>
+                                        <connections>
+                                            <action selector="toggleQueued" destination="n2K-vi-j5p" eventType="touchUpInside" id="VjF-fc-b98"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -299,6 +308,21 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="394" height="128"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskesToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="checkboxImageView" destination="DdM-Ya-P2y" id="ecO-wm-uOk"/>
+                                            <outlet property="publishDateLabel" destination="LJg-OC-Ly5" id="ODD-aE-8KW"/>
+                                            <outlet property="thumbnailImageView" destination="0cy-vQ-mfT" id="DLH-Nh-71V"/>
+                                            <outlet property="titleLabel" destination="iCN-fz-2Ba" id="tLT-a8-ARN"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -316,26 +340,18 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="trash" catalog="system" id="p6c-Pa-7dx">
                                 <connections>
-                                    <action selector="deleteSelectedItems" destination="74t-2c-m25" id="hOO-nm-HS3"/>
+                                    <action selector="deleteSelectedItems" destination="74t-2c-m25" id="ucj-vS-2Aq"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="play.fill" catalog="system" id="ksn-AE-ca8">
-                                <connections>
-                                    <action selector="applyUpdates" destination="74t-2c-m25" id="lSW-N5-iDR"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="arrow.clockwise.circle" catalog="system" id="Wpz-Ib-dpN">
-                                <connections>
-                                    <action selector="triggerUpdates" destination="74t-2c-m25" id="Ccj-Gg-PI2"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem title="Item" image="play.fill" catalog="system" id="ksn-AE-ca8"/>
+                            <barButtonItem title="Item" image="arrow.clockwise.circle" catalog="system" id="Wpz-Ib-dpN"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="applyUpdatesButton" destination="ksn-AE-ca8" id="8Ui-J5-YDc"/>
+                        <outlet property="applyUpdatesButton" destination="ksn-AE-ca8" id="1Qg-cy-1qq"/>
                         <outlet property="collectionView" destination="TKH-wq-8Ut" id="6a8-cN-xPC"/>
-                        <outlet property="deleteButton" destination="p6c-Pa-7dx" id="gJ5-bd-xqe"/>
-                        <outlet property="updateButton" destination="Wpz-Ib-dpN" id="MA7-61-461"/>
+                        <outlet property="deleteButton" destination="p6c-Pa-7dx" id="g9K-Pd-LU0"/>
+                        <outlet property="updateButton" destination="Wpz-Ib-dpN" id="1QC-16-NbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2S-AB-uZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

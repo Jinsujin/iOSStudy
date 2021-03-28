@@ -51,6 +51,7 @@ final class LibraryController: UIViewController {
   private func setupView() {
     self.title = "Library"
     collectionView.register(TitleSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
+    collectionView.delegate = self
     
     collectionView.collectionViewLayout = configureCollectionViewLayout()
     configureDataSource()
@@ -86,6 +87,7 @@ extension LibraryController {
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
     }
 }
+
 
 // MARK:- Diffable data source
 extension LibraryController {
@@ -128,3 +130,16 @@ extension LibraryController {
     }
 }
 
+
+
+// MARK: - UICollectionView Delegate -
+extension LibraryController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let tutorial = dataSource.itemIdentifier(for: indexPath),
+           let tutorialDetailController = storyboard?.instantiateViewController(identifier: TutorialDetailViewController.identifier, creator: { coder in
+            return TutorialDetailViewController(coder: coder, tutorial: tutorial)
+           }){
+            show(tutorialDetailController, sender: nil)
+        }
+    }
+}

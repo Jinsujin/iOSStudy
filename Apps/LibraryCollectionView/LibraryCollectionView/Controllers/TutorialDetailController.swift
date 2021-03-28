@@ -37,6 +37,7 @@
 import UIKit
 
 final class TutorialDetailViewController: UIViewController {
+    static let identifier = String(describing: TutorialDetailViewController.self)
   
   private let tutorial: Tutorial
   
@@ -50,6 +51,12 @@ final class TutorialDetailViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+    
+    ///
+    required init?(coder: NSCoder, tutorial: Tutorial) {
+        self.tutorial = tutorial
+        super.init(coder: coder)
+    }
   
   lazy var dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -74,6 +81,8 @@ final class TutorialDetailViewController: UIViewController {
   }
   
   @IBAction func toggleQueued() {
+    tutorial.isQueued.toggle()
+    
     UIView.performWithoutAnimation {
       if tutorial.isQueued {
         queueButton.setTitle("Remove from queue", for: .normal)

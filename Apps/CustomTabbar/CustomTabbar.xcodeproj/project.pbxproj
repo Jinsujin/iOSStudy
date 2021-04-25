@@ -13,6 +13,8 @@
 		6FDA07882635B10D008BE939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDA07862635B10D008BE939 /* Main.storyboard */; };
 		6FDA078A2635B111008BE939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FDA07892635B111008BE939 /* Assets.xcassets */; };
 		6FDA078D2635B111008BE939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDA078B2635B111008BE939 /* LaunchScreen.storyboard */; };
+		6FDA07962635E4A0008BE939 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA07952635E49F008BE939 /* ShareViewController.swift */; };
+		6FDA07992635EA1D008BE939 /* eggRecipe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6FDA07982635EA1D008BE939 /* eggRecipe.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6FDA07892635B111008BE939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FDA078C2635B111008BE939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FDA078E2635B111008BE939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FDA07952635E49F008BE939 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		6FDA07982635EA1D008BE939 /* eggRecipe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = eggRecipe.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				6FDA07892635B111008BE939 /* Assets.xcassets */,
 				6FDA078B2635B111008BE939 /* LaunchScreen.storyboard */,
 				6FDA078E2635B111008BE939 /* Info.plist */,
+				6FDA07952635E49F008BE939 /* ShareViewController.swift */,
+				6FDA07982635EA1D008BE939 /* eggRecipe.pdf */,
 			);
 			path = CustomTabbar;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			files = (
 				6FDA078D2635B111008BE939 /* LaunchScreen.storyboard in Resources */,
 				6FDA078A2635B111008BE939 /* Assets.xcassets in Resources */,
+				6FDA07992635EA1D008BE939 /* eggRecipe.pdf in Resources */,
 				6FDA07882635B10D008BE939 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 			files = (
 				6FDA07852635B10D008BE939 /* ViewController.swift in Sources */,
 				6FDA07812635B10D008BE939 /* AppDelegate.swift in Sources */,
+				6FDA07962635E4A0008BE939 /* ShareViewController.swift in Sources */,
 				6FDA07832635B10D008BE939 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

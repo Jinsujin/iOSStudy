@@ -5,5 +5,7 @@
         <page name='Untitled Page'/>
         <page name='propertyWrapper'/>
         <page name='Property'/>
+        <page name='DeepCopy'/>
+        <page name='Dependency Injection'/>
     </pages>
 </playground>

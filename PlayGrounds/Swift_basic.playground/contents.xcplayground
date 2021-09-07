@@ -7,5 +7,6 @@
         <page name='Property'/>
         <page name='DeepCopy'/>
         <page name='Dependency Injection'/>
+        <page name='Subscript'/>
     </pages>
 </playground>

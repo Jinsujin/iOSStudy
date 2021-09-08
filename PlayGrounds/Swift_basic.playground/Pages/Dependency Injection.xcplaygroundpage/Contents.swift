@@ -159,7 +159,7 @@ print(homeMade.food?.calorie)
 
 
 
-//---- DI-- Example ----//
+//---- POP-- Example ----//
 protocol Walkable {
     var isBareFoot: Bool { get set } // 맨발여부
     var speed: Double { get set }

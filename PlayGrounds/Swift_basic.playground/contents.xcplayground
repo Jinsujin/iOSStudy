@@ -8,5 +8,7 @@
         <page name='DeepCopy'/>
         <page name='Dependency Injection'/>
         <page name='Subscript'/>
+        <page name='Sequence+IteratorProtocol'/>
+        <page name='Defer'/>
     </pages>
 </playground>

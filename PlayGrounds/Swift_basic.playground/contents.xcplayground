@@ -11,5 +11,6 @@
         <page name='Sequence+IteratorProtocol'/>
         <page name='Defer'/>
         <page name='OpaqueReturnType'/>
+        <page name='BitwiseOperators'/>
     </pages>
 </playground>

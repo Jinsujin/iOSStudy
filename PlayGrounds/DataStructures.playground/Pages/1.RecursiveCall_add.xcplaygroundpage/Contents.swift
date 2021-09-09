@@ -8,7 +8,6 @@ import Foundation
 /*:
 
  * for in 문
- 
 */
 var result = 0
 

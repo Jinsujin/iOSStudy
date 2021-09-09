@@ -1,4 +1,6 @@
-import UIKit
+//: [Previous](@previous)
+
+import Foundation
 
 /**
     불투명 반환 타입
@@ -31,3 +33,6 @@ func doubleFunc2(value: String) -> some Equatable {
 
 print(doubleFunc1(value: 3))
 print(doubleFunc2(value: "나"))
+
+
+//: [Next](@next)

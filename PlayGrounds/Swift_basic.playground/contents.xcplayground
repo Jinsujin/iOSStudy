@@ -12,5 +12,6 @@
         <page name='Defer'/>
         <page name='OpaqueReturnType'/>
         <page name='BitwiseOperators'/>
+        <page name='protocol'/>
     </pages>
 </playground>

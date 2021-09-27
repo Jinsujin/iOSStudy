@@ -13,5 +13,7 @@
         <page name='OpaqueReturnType'/>
         <page name='BitwiseOperators'/>
         <page name='protocol'/>
+        <page name='protocol-compositon'/>
+        <page name='Error'/>
     </pages>
 </playground>

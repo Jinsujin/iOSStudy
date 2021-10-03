@@ -15,5 +15,6 @@
         <page name='protocol'/>
         <page name='protocol-compositon'/>
         <page name='Error'/>
+        <page name='Generic'/>
     </pages>
 </playground>

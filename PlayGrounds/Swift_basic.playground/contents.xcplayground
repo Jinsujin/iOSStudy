@@ -16,5 +16,6 @@
         <page name='protocol-compositon'/>
         <page name='Error'/>
         <page name='Generic'/>
+        <page name='Date'/>
     </pages>
 </playground>

@@ -283,4 +283,34 @@ let 만든날짜 = Date(y: 2021, m: 1, d: 1)
 print(만든날짜)
 
 
+/** ======================================================================
+ uid 생성 하기
+ 
+ ====================================================================== */
+
+// 1. UUID - 128 random bits
+// String 값으로 얻을 수 있다
+let identifier1 = UUID()
+let identifier2 = UUID()
+
+let uuid = UUID().uuidString
+print(uuid)
+
+// 2. timeIntervalSince1970 을 이용한 Int 값 생성
+var uidCount: Double = 0.0
+func makeUID() -> Int {
+    uidCount += 1
+//    return Int((Date().timeIntervalSince1970 + uidCount)) // 1634035358
+    return Int((Date().timeIntervalSince1970 + uidCount) * 100000) //163403518543954
+}
+
+makeUID()
+makeUID()
+makeUID()
+makeUID()
+
+
+//9223372036854775807
+Int.max
+
 //: [Next](@next)

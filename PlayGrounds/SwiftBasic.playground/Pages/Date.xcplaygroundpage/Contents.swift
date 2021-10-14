@@ -313,4 +313,41 @@ makeUID()
 //9223372036854775807
 Int.max
 
+
+struct Book {
+    var uid: String = UUID().uuidString
+    var title: String = "book name"
+    init(title: String) {
+        self.title = title
+    }
+}
+
+struct Log {
+    let uid: String
+    let ownerId: String
+    let createdAt = Date()
+    
+    init(ownerId: String) {
+        self.uid = UUID().uuidString
+        self.ownerId = ownerId
+    }
+}
+
+
+let booklist = [
+    Book(title: "boo1"),
+    Book(title: "boo2"),
+    Book(title: "boo3")
+]
+
+let logs: [Log] = booklist.map { Log(ownerId: $0.uid) }
+print(logs)
+
+
+let today = Date()
+let passedTime = TimeInterval(60 * 3)
+today.addingTimeInterval(passedTime)
+
+
+
 //: [Next](@next)

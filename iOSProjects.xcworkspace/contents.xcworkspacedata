@@ -15,7 +15,7 @@
       location = "container:"
       name = "PlayGrounds">
       <FileRef
-         location = "group:/Users/jsj/dev/iOS/swift/PlayGrounds/Swift_basic.playground">
+         location = "group:/Users/jsj/Documents/GitHub/iOSStudy/PlayGrounds/SwiftBasic.playground">
       </FileRef>
       <FileRef
          location = "group:PlayGrounds/GCD.playground">
@@ -24,19 +24,13 @@
          location = "group:PlayGrounds/DataStructures.playground">
       </FileRef>
       <FileRef
-         location = "group:PlayGrounds/OpaqueReturnType.playground">
+         location = "group:/Users/jsj/Documents/GitHub/iOSStudy/PlayGrounds/CodingTest.playground">
       </FileRef>
       <FileRef
-         location = "group:PlayGrounds/FP_fizzbuzz.playground">
+         location = "group:PlayGrounds/Architecture.playground">
       </FileRef>
       <FileRef
-         location = "group:PlayGrounds/SkillTest.playground">
-      </FileRef>
-      <FileRef
-         location = "group:/Users/jsj/dev/iOS/swift/GCD.playground">
-      </FileRef>
-      <FileRef
-         location = "group:DataStructures.playground">
+         location = "group:FP.playground">
       </FileRef>
    </Group>
 </Workspace>

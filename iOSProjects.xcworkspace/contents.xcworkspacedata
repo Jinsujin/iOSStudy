@@ -30,7 +30,7 @@
          location = "group:PlayGrounds/Architecture.playground">
       </FileRef>
       <FileRef
-         location = "group:FP.playground">
+         location = "group:PlayGrounds/FP.playground">
       </FileRef>
    </Group>
 </Workspace>

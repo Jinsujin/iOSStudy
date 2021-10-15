@@ -17,5 +17,6 @@
         <page name='Error'/>
         <page name='Generic'/>
         <page name='Date'/>
+        <page name='String'/>
     </pages>
 </playground>

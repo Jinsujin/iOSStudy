@@ -3,5 +3,7 @@
     <pages>
         <page name='Untitled Page'/>
         <page name='OOP+Encapsulation'/>
+        <page name='MVP'/>
+        <page name='MVVM'/>
     </pages>
 </playground>

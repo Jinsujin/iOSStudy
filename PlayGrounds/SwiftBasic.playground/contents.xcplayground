@@ -20,5 +20,7 @@
         <page name='String'/>
         <page name='String2'/>
         <page name='String-compare'/>
+        <page name='regex'/>
+        <page name='String-search'/>
     </pages>
 </playground>

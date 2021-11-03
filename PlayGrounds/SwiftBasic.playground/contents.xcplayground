@@ -19,5 +19,6 @@
         <page name='Date'/>
         <page name='String'/>
         <page name='String2'/>
+        <page name='String-compare'/>
     </pages>
 </playground>

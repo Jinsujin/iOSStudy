@@ -22,5 +22,6 @@
         <page name='String-compare'/>
         <page name='regex'/>
         <page name='String-search'/>
+        <page name='custom-operator'/>
     </pages>
 </playground>

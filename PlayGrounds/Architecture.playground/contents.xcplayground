@@ -6,5 +6,9 @@
         <page name='MVP'/>
         <page name='MVVM'/>
         <page name='OOP'/>
+        <page name='OOP+WaterSpray-1'/>
+        <page name='OOP+WaterSpray-2'/>
+        <page name='OOP+WaterSpray-3'/>
+        <page name='OOP+WaterSpray-4'/>
     </pages>
 </playground>

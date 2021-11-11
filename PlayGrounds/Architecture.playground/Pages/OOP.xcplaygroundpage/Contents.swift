@@ -174,4 +174,36 @@ open class A {
 A().add(a: 1, b: 2)
 
 
+
+/**
+ getter, setter
+ 
+ 이상적인 개체의 상태 수정은, 개체 스스로 알아서 관리하는 형태 이다.
+ */
+
+public class Classroom {
+    private var scores: [Int] = []
+    private var mean: Float = 0.0
+    
+    init(scores: [Int]) {
+        self.scores = scores
+        updateMean()
+    }
+    
+    public func setScore(index: Int, score: Int) {
+        scores[index] = score
+        updateMean()
+    }
+    
+    private func updateMean() {
+        let totalSum = scores.reduce(0) {$0 + $1}
+        self.mean = Float(totalSum / scores.count)
+    }
+}
+
+let classroom = Classroom(scores: [10,5,8])
+classroom.setScore(index: 0, score: 14)
+
+
+
 //: [Next](@next)

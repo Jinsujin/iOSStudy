@@ -31,7 +31,7 @@ class SprayHead {
 }
 
 class SprayBottle {
-    private(set) var capacity: Int
+    internal private(set) var capacity: Int
     private(set) var 남아있는물의양Ml: Int = 0
     
     init(_ capacity: Int) {

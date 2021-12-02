@@ -19,6 +19,8 @@
 		6FDA3EE32756A06F00691ACD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3EE22756A06F00691ACD /* ViewModel.swift */; };
 		6FDA3EE52756A09E00691ACD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3EE42756A09E00691ACD /* Service.swift */; };
 		6FDA3EE72756A0E500691ACD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3EE62756A0E500691ACD /* Repository.swift */; };
+		6FDA3EEA2757C77300691ACD /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3EE92757C77300691ACD /* Stack.swift */; };
+		6FDA3EEC2757C94500691ACD /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDA3EEB2757C94400691ACD /* StackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		6FDA3EE22756A06F00691ACD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6FDA3EE42756A09E00691ACD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		6FDA3EE62756A0E500691ACD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		6FDA3EE92757C77300691ACD /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		6FDA3EEB2757C94400691ACD /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		6FDA3EAE27569FA000691ACD /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				6FDA3EE82757C75900691ACD /* Service */,
 				6FDA3EAF27569FA000691ACD /* AppDelegate.swift */,
 				6FDA3EB127569FA000691ACD /* SceneDelegate.swift */,
 				6FDA3EB327569FA000691ACD /* ViewController.swift */,
@@ -116,7 +121,6 @@
 				6FDA3EC027569FA900691ACD /* Info.plist */,
 				6FDA3EB827569FA000691ACD /* Unit.xcdatamodeld */,
 				6FDA3EE22756A06F00691ACD /* ViewModel.swift */,
-				6FDA3EE42756A09E00691ACD /* Service.swift */,
 				6FDA3EE62756A0E500691ACD /* Repository.swift */,
 			);
 			path = Unit;
@@ -127,6 +131,7 @@
 			children = (
 				6FDA3EC927569FA900691ACD /* UnitTests.swift */,
 				6FDA3ECB27569FA900691ACD /* Info.plist */,
+				6FDA3EEB2757C94400691ACD /* StackTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -138,6 +143,15 @@
 				6FDA3ED627569FA900691ACD /* Info.plist */,
 			);
 			path = UnitUITests;
+			sourceTree = "<group>";
+		};
+		6FDA3EE82757C75900691ACD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6FDA3EE42756A09E00691ACD /* Service.swift */,
+				6FDA3EE92757C77300691ACD /* Stack.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +288,7 @@
 				6FDA3EE32756A06F00691ACD /* ViewModel.swift in Sources */,
 				6FDA3EB427569FA000691ACD /* ViewController.swift in Sources */,
 				6FDA3EBA27569FA000691ACD /* Unit.xcdatamodeld in Sources */,
+				6FDA3EEA2757C77300691ACD /* Stack.swift in Sources */,
 				6FDA3EB027569FA000691ACD /* AppDelegate.swift in Sources */,
 				6FDA3EB227569FA000691ACD /* SceneDelegate.swift in Sources */,
 				6FDA3EE52756A09E00691ACD /* Service.swift in Sources */,
@@ -284,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FDA3EEC2757C94500691ACD /* StackTests.swift in Sources */,
 				6FDA3ECA27569FA900691ACD /* UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

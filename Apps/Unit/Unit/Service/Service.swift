@@ -7,7 +7,7 @@ class Service {
         let result = a + b
         
         // DB save
-        repository.save(num: result)
+//        repository.save(num: result)
         
         return result
     }

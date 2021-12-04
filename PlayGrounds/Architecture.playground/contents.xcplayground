@@ -12,5 +12,7 @@
         <page name='OOP+WaterSpray-4'/>
         <page name='Polymorphism'/>
         <page name='Interface'/>
+        <page name='Protocol'/>
+        <page name='SOLID'/>
     </pages>
 </playground>

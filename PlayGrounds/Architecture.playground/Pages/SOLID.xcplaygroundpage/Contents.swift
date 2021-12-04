@@ -80,5 +80,95 @@ let doorCloser = DoorCloser(door: door)
 doorCloser.execute()
 
 
+/**
+ The Open-Closed Principle
+ 개방 폐쇄 원칙
+ 확장에는 열려있고, 변경에는 닫혀있다.
+ */
+protocol Shooting {
+    func shoot() -> String
+}
+
+// LaserBean class 는 레이저 빔을 쏠 수 있다.
+final class LaserBeam: Shooting {
+    func shoot() -> String {
+        return "💥Biiiiiip!"
+    }
+}
+
+final class WeaponsComposite {
+    let weapons: [Shooting]
+    init(weapons: [Shooting]) {
+        self.weapons = weapons
+    }
+    
+    func shoot() -> [String] {
+        return weapons.map { $0.shoot() }
+    }
+}
+
+let laser = LaserBeam()
+var weapons = WeaponsComposite(weapons: [laser])
+weapons.shoot()
+
+// 여기있는 RocketLauncher class 는 로켓을 쏠 수 있다.
+// WeaponsComposite class에 로켓 런쳐를 서포트하기위해 기존 클래스에서 아무것도 변경할 필요가 없다.
+final class RocketLauncher: Shooting {
+    func shoot() -> String {
+        return "Whooosh!☄️"
+    }
+}
+
+let rocket = RocketLauncher()
+weapons = WeaponsComposite(weapons: [laser, rocket])
+weapons.shoot()
+
+
+/**
+ 리스코프 치환 원칙
+ Liskov Substitution Principle
+ 
+ RequestError 는 NSError 의 서브클래스이며, 추가 기능을 제공하지만 원래 기능은 건드리지 않는다.
+ */
+
+/**
+ The Interface Segregation Principle
+ 클라이언트는 사용하지 않는 interface에 의존하도록 강요되어서는 안된다.
+ */
+
+
+/**
+ Dependency Inversion Principle
+ 상위 수준의 모듈은 하위 수준 모듈에 의존해서는 안된다.
+ 둘 다 추상화애 의존해야 한다. 추상화는 세부사항에 의존해서는 안된다.
+ 즉, 당신의 실체는 구체적이 아니라 추상화에 의존해야 한다.
+ */
+protocol TimeTraveling {
+    func timeInTime(time: TimeInterval) -> String
+}
+
+final class DeLorean: TimeTraveling {
+    func timeInTime(time: TimeInterval) -> String {
+        return "time: \(time)s"
+    }
+}
+
+//EmmetBrown은 DeLorean 이라는 구체적 클래스 DeLorean 이 아닌, TimeTraveling 디바이스로 주어진다.
+final class EmmettBrown {
+    private let timeMachine: TimeTraveling
+    init(timeMachine: TimeTraveling) {
+        self.timeMachine = timeMachine
+    }
+    
+    func travelInTime(time: TimeInterval) -> String {
+        return timeMachine.timeInTime(time: time)
+    }
+}
+
+let timeMachine = DeLorean()
+let mastermind = EmmettBrown(timeMachine: timeMachine)
+mastermind.travelInTime(time: -3600 * 8760)
+
+
 
 //: [Next](@next)

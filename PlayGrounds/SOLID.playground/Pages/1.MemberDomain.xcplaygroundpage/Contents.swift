@@ -14,7 +14,7 @@ enum Grade {
 }
 
 /// 회원 엔티티
-class Member {
+struct Member {
     let id: UUID
     let name: String
     let grade: Grade

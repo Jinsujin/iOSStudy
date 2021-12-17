@@ -1,7 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
-
+import XCTest
 
 /// 회원 등급
 enum Grade {
@@ -9,7 +9,7 @@ enum Grade {
 }
 
 /// 회원 엔티티
-class Member {
+struct Member {
     let id: UUID
     let name: String
     let grade: Grade
@@ -104,10 +104,10 @@ class FixDiscountPolicy: DiscountPolicy {
 
 /// 주문서. 주문이 다 끝났을때 만들어지는 객체
 struct Order {
-    private let memberId: UUID
-    private let itemName: String
-    private let itemPrice: Int
-    private let discountPrice: Int
+    let memberId: UUID
+    let itemName: String
+    let itemPrice: Int
+    let discountPrice: Int
     
     init(memberId: UUID, itemName: String, itemPrice: Int, discountPrice: Int) {
         self.memberId = memberId
@@ -145,6 +145,60 @@ class OrderServiceImpl: OrderService {
         return Order(memberId: memberId, itemName: itemName, itemPrice: itemPrice, discountPrice: discountPrice)
     }
 }
+
+
+//let memberService: MemberService = MemberServiceImpl()
+//let orderService: OrderServiceImpl = OrderServiceImpl()
+//
+//let member = Member(name: "memberA", grade: .vip)
+//let memberId = member.id
+//
+//// 1. DB에 넣기
+//memberService.join(member: member)
+//
+//// 2. 주문 만들기
+//let order = orderService.createOrder(memberId: member.id, itemName: "itemA", itemPrice: 10000)
+//print(order)
+//print(order.calculatePrice()) // 9000
+
+
+
+
+/**
+ Test
+ */
+class OrderServiceTests: XCTestCase {
+    var memberService: MemberService!
+    var orderService: OrderServiceImpl!
+
+    override func setUp() {
+        super.setUp()
+        memberService = MemberServiceImpl()
+        orderService = OrderServiceImpl()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        memberService = nil
+        orderService = nil
+    }
+
+    func testJoin() {
+        // given
+        let member = Member(name: "memberA", grade: .vip)
+
+        // when
+        // 1. DB에 넣기
+        memberService.join(member: member)
+        // 2. 주문 만들기
+        let order = orderService.createOrder(memberId: member.id, itemName: "itemA", itemPrice: 10000)
+        
+        // then
+        XCTAssertEqual(order.discountPrice, 1000)
+    }
+}
+
+OrderServiceTests.defaultTestSuite.run()
 
 
 //: [Next](@next)

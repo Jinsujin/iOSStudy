@@ -4,5 +4,6 @@
         <page name='Untitled Page 2'/>
         <page name='1.MemberDomain'/>
         <page name='2.OrderDomain'/>
+        <page name='3.AddDiscountPolicy'/>
     </pages>
 </playground>

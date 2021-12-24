@@ -142,9 +142,9 @@ struct Rectangle {
     func printRect() {
         print(
         """
-        (\(leftTopX),\(leftTopY))------(\(leftTopX),\(rightBottomY))
-        |       |
-        |       |
+        (\(leftTopX),\(leftTopY))------(\(rightBottomX),\(leftTopY))
+        |                      |
+        |                      |
         (\(leftTopX),\(rightBottomY))------(\(rightBottomX),\(rightBottomY))
         """
         )
@@ -169,13 +169,205 @@ struct Rectangle {
 }
 
 
-var rect = Rectangle(leftTopX: 5, leftTopY: 11, rightBottomX: 15, rightBottomY: 4)
-rect.printRect()
+//var rect = Rectangle(leftTopX: 5, leftTopY: 11, rightBottomX: 15, rightBottomY: 4)
+//rect.printRect()
+//rect.printArea()
+
+//let floatRect = Rectangle(leftTopX: 4.5, leftTopY: 10.5, rightBottomX: 15, rightBottomY: 3.5)
+//floatRect.printRect()
+//floatRect.printCenter()
 
 
-var floatRect = Rectangle(leftTopX: 4.5, leftTopY: 10.5, rightBottomX: 15, rightBottomY: 3.5)
-floatRect.printRect()
-floatRect.printCenter()
+
+/*:
+ ### 연습 문제2
+ 
+*/
+
+struct MyPoint {
+    var myX: Float
+    var myY: Float
+
+    func printPoint() {
+        print("(\(myX), \(myY))")
+    }
+    
+    mutating func setX(x: Float) {
+        self.myX = x
+    }
+    
+    mutating func setY(y: Float) {
+        self.myY = y
+    }
+    
+    /// 내점과 다른점 사이의 거리 계산
+    func getDistanceTo(toPoint : MyPoint) -> Float {
+        let x = toPoint.myX - self.myX
+        let y = toPoint.myY - self.myY
+        
+        // pow() : 제곱 - 예) 3.0 의 2제곱은 9.0 이다.
+        // sqrt(): 제곱근 - 예) 9.0 의 제곱근은 3.0 이다.
+        // floor(): 버림
+        
+        let distance = sqrt(pow(x, 2) + pow(y, 2))
+        return distance
+    }
+}
+
+//var pointA = MyPoint(myX: 2.5, myY: 15.8)
+//pointA.printPoint()
+//pointA.setX(x: 15.2)
+//pointA.setY(y: 7.4)
+//print("pointA = (\(pointA.myX), \(pointA.myY))")
+//
+//var pointB = MyPoint(myX: 15, myY: 12.2)
+//let distance = pointA.getDistanceTo(toPoint: pointB)
+//print(floor(distance))
+
+
+/*:
+ ### 연습문제 3
+ 
+ */
+
+struct Rectangle2 {
+    var leftTop: MyPoint
+    var rightBottom: MyPoint
+    
+    var center: MyPoint {
+        let centerX =  width / 2 + leftTop.myX
+        let centerY = height / 2 + rightBottom.myY
+        return MyPoint(myX: centerX, myY: centerY)
+    }
+    
+    var width: Float {
+        rightBottom.myX - leftTop.myX
+    }
+    
+    var height: Float {
+        leftTop.myY - rightBottom.myY
+    }
+    
+    init() {
+        self.leftTop = MyPoint(myX: 0, myY: 0)
+        self.rightBottom = MyPoint(myX: 0, myY: 0)
+    }
+    
+    init(_ point: MyPoint, width: Float, height: Float) {
+        let halfW = width / 2
+        let halfH = height / 2
+        self.leftTop = MyPoint(myX: point.myX - halfW, myY: point.myY + halfH)
+        self.rightBottom = MyPoint(myX: point.myX + halfW, myY: point.myY - halfH)
+    }
+    
+    func printRect() {
+        print(
+        """
+        (\(leftTop.myX),\(leftTop.myY))------(\(rightBottom.myX),\(leftTop.myY))
+        |                      |
+        |                      |
+        (\(leftTop.myX),\(rightBottom.myY))------(\(rightBottom.myX),\(rightBottom.myY))
+        """
+        )
+    }
+    
+    /// 면적 구하기
+    func printArea() {
+        print("면적 = ", width * height)
+    }
+    
+    /// 중점 구하기
+    func printCenter() {
+        let centerX =  width / 2 + leftTop.myX
+        let centerY = height / 2 + rightBottom.myY
+        print("중점 = \(centerX), \(centerY)")
+    }
+    
+    mutating func moveTo(delta: MyPoint) {
+        let halfW = width / 2
+        let halfH = height / 2
+        let centerX = self.center.myX + delta.myX
+        let centerY = self.center.myY - delta.myY
+        self.leftTop = MyPoint(myX: centerX - halfW, myY: centerY + halfH)
+        self.rightBottom = MyPoint(myX: centerX + halfW, myY: centerY - halfH)
+    }
+}
+
+
+var rectB = Rectangle2(MyPoint(myX: 5, myY: 5), width: 5, height: 10)
+rectB.printRect()
+rectB.printCenter()
+print(rectB.center)
+print("-----좌표이동후----")
+rectB.moveTo(delta: MyPoint(myX: -1, myY: 2))
+rectB.printCenter()
+rectB.printRect()
+
+/*:
+ ## 프로그램 흐름 제어
+ 
+ */
+
+func whatIsGrade(point : Int) -> Character {
+    let result: Character
+    if (point >= 90) {
+        result = "A"
+    } else if (point < 90 && point >= 80) {
+        result = "B"
+    } else if (point < 80 && point >= 70) {
+        result = "C"
+    }else if (point < 70 && point >= 60) {
+        result = "D"
+    } else {
+        result = "F"
+    }
+    return result
+}
+
+//print(whatIsGrade(point: 20))
+
+
+func whatIsGradeSwitch(point : Int) -> Character {
+    let result: Character
+    switch point {
+    case 0..<60:
+        result = "F"
+    case 60..<70:
+        result = "D"
+    case 70..<80:
+        result = "C"
+    case 80..<90:
+        result = "B"
+    default:
+        result = "A"
+    }
+    return result
+}
+
+//print(whatIsGradeSwitch(point: 90))
+
+func gugu(dan : Int) {
+// dan 값에 1 ~ 9까지 곱해서 출력하세요
+    for i in 1...9 {
+        print("\(dan) * \(i) = \(dan * i)")
+    }
+}
+
+func makeAll() {
+// gugu() 함수를 1~9단까지 호출하세요
+    for i in 1...9 {
+        print("\(i) 단")
+        gugu(dan: i)
+    }
+}
+
+func makeGugu(maxDan : Int) {
+// 1단부터 maxDan까지 값에 1 ~ 9까지 곱해서 출력하세요
+    for i in 1...maxDan {
+        print("\(i) 단")
+        gugu(dan: i)
+    }
+}
 
 
 //: [Next](@next)
